@@ -26,7 +26,7 @@ DATA_DIR = config['DATA_DIR']
 OUTPUT_DIR = config['OUTPUT_DIR']
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-all_cpus = config['focus_cpus']
+all_cpus = config['all_cpus']
 configs = config['configs']
 
 cpu_labels = [f'cpu{cpu}' for cpu in all_cpus]

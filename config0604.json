@@ -1,9 +1,9 @@
 {
-    "DATA_DIR": "data0617",
-    "OUTPUT_DIR": "data0617_processed",
+    "DATA_DIR": "data0604",
+    "OUTPUT_DIR": "data0604_processed",
 
-    "configs": ["baseline", "nearMem-l2-0.6", "nearMem-l2-0.6-addrdep-0.1", "nearMem-l2-0.7", "nearMem-l2-0.7-addrdep-0.1", "nearMem-l2-0.8", "nearMem-l2-0.8-addrdep-0.1"],
-    "nearmem_configs": ["nearMem-l2-0.6", "nearMem-l2-0.6-addrdep-0.1", "nearMem-l2-0.7", "nearMem-l2-0.7-addrdep-0.1", "nearMem-l2-0.8", "nearMem-l2-0.8-addrdep-0.1"],
+    "configs": ["baseline", "nearMem-l2-0.5", "nearMem-l2-0.6", "nearMem-l2-0.7", "nearMem-l2-0.8", "nearMem-l2-0.9"],
+    "nearmem_configs": ["nearMem-l2-0.5", "nearMem-l2-0.6", "nearMem-l2-0.7", "nearMem-l2-0.8", "nearMem-l2-0.9"],
 
     "all_cpus": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
 
