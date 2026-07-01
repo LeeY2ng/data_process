@@ -38,6 +38,14 @@ data = {}
 for c in configs:
     data[c] = pd.read_csv(os.path.join(DATA_DIR, f'{c}.csv'))
 
+def config_label(name):
+    """返回配置的显示名称：去掉 'nearMem-' 前缀（如有），baseline 保持原样"""
+    if name == 'baseline':
+        return 'baseline'
+    if name.startswith('nearMem-'):
+        return name[len('nearMem-'):]
+    return name
+
 common_ttis = [t for t in range(START_TTI, END_TTI + 1)]
 
 print(f"Common valid TTIs (TTI>={START_TTI}): {common_ttis[0]}-{common_ttis[-1]}")
@@ -46,7 +54,7 @@ print(f"Common valid TTIs (TTI>={START_TTI}): {common_ttis[0]}-{common_ttis[-1]}
 rows = []
 for c in configs:
     df = data[c]
-    label = 'baseline' if c == 'baseline' else c[10:14]
+    label = config_label(c)
     for i in range(len(common_ttis) - WINDOW + 1):
         tti_start = common_ttis[i]
         tti_end = common_ttis[i + WINDOW - 1]
@@ -75,7 +83,7 @@ best_rows = []
 for c in configs:
     df_c = df_out[df_out['config'] == c]
     best = df_c.loc[df_c['ipc'].idxmax()]
-    label = 'baseline' if c == 'baseline' else c[10:14]
+    label = config_label(c)
     bl_at_win = df_out[(df_out['config'] == 'baseline') & (df_out['tti_start'] == best['tti_start'])]
     bl_ipc = bl_at_win.iloc[0]['ipc'] if not bl_at_win.empty else 0
     sp = best['ipc'] / bl_ipc if bl_ipc > 0 else 0

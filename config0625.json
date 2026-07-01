@@ -1,0 +1,26 @@
+{
+    "DATA_DIR": "data0625",
+    "OUTPUT_DIR": "data0625_processed",
+
+    "configs": ["baseline", "nearMem-perfConf-thres_0.0", "nearMem-perfConf-thres_0.2", "nearMem-perfConf-thres_0.4", "nearMem-perfConf-thres_0.6", "nearMem-perfConf-thres_0.7"],
+    "nearmem_configs": ["nearMem-perfConf-thres_0.0", "nearMem-perfConf-thres_0.2", "nearMem-perfConf-thres_0.4", "nearMem-perfConf-thres_0.6", "nearMem-perfConf-thres_0.7"],
+
+    "all_cpus": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+
+    "groups_with_cols": {
+        "CPU0-2":   ["system.cpu0.workIpc", "system.cpu1.workIpc", "system.cpu2.workIpc"],
+        "CPU6-8":   ["system.cpu6.workIpc", "system.cpu7.workIpc", "system.cpu8.workIpc"],
+        "CPU12-14": ["system.cpu12.workIpc", "system.cpu13.workIpc", "system.cpu14.workIpc"]
+    },
+    "groups_with_ids": {
+        "CPU0-2":   [0, 1, 2],
+        "CPU6-8":   [6, 7, 8],
+        "CPU12-14": [12, 13, 14]
+    },
+
+    "tti_start": 9,
+    "tti_end": 12,
+    "sliding_window_start_tti": 4,
+    "sliding_window_end_tti": 13,
+    "window_size": 4
+}
